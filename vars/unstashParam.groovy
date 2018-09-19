@@ -20,9 +20,14 @@ def call(String name, String fname = null) {
                 nodeName = env['NODE_NAME'] == 'master' ? '(master)' : env['NODE_NAME']
                 workspace = new FilePath(Jenkins.getInstance().getComputer(nodeName).getChannel(), env['WORKSPACE'])
                 filename = fname == null ? param.getOriginalFileName() : fname
-                file = workspace.child(filename)
-                file.copyFrom(param.getFile())
-                return filename;
+                if (filename == null || filename == "") {
+                    echo 'No file given! Continuing'
+                    return;
+                } else {
+                    file = workspace.child(filename)
+                    file.copyFrom(param.getFile())
+                    return filename;
+                }
             }
         }
     }
