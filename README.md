@@ -1,6 +1,8 @@
 # JENKINS-27413 workaround library
 
-This [pipeline library][2] contains a workaround for Jenkins issue [ JENKINS-27413][1]. It provides a new step `unstashParam` that saves file parameter to a workspace.
+This [pipeline library][2] contains a workaround for Jenkins issue [JENKINS-27413][1]. It provides a new step `unstashParam` that saves file parameter to a workspace.
+
+This was mainly forked to get faster turnaround on issues as well as the option of using git instead of hg.
 
 ## Configuration
 
@@ -24,3 +26,4 @@ This library is MIT licensed. See `license.txt` for details.
 
 [1]: https://issues.jenkins-ci.org/browse/JENKINS-27413
 [2]: https://jenkins.io/doc/book/pipeline/shared-libraries/
+[3]: https://bitbucket.org/janvrany/jenkins-27413-workaround-library
